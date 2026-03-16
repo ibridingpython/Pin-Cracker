@@ -37,9 +37,6 @@ while bruting == True:
     start_time = time.time() #! time
     bruting = False
     
-    
-    
-
 for attack_pin in product(digits, repeat=password):
         
         attempts += 1
@@ -53,7 +50,6 @@ for attack_pin in product(digits, repeat=password):
             print("Attempts per second:", f"{attempts_per_second:.1f}")
             print()
         
-            
         if list(attack_pin) == generated_pin:
             
             print("Attack successfully executed.")
