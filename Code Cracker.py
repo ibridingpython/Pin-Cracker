@@ -26,7 +26,6 @@ while bruting == True:
         
     print(f"{len(generated_pin)} digits pin has been succesfully generated.")
     print(f"Program will now attempt to brute force.")
-    print()
     
         #! countdown
     for i in range(3, 0, -1):
@@ -34,6 +33,7 @@ while bruting == True:
         time.sleep(1)
             
     print("Starting attack...")
+    print()
     start_time = time.time() #! time
     bruting = False
     
@@ -58,6 +58,7 @@ for attack_pin in product(digits, repeat=password):
             print("> Attempts taken:", attempts)
             print("> Attempts per second:", f"{attempts_per_second:.2f}")
             print("> Time taken:", f"{elapsed_time:.2f}")
+            print("===Made By Ibad===")
             print()
 
             break
