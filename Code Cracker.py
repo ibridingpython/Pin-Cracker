@@ -44,20 +44,23 @@ for attack_pin in product(digits, repeat=password):
         
         attempts += 1
         
+        elapsed_time = time.time() - start_time
+        attempts_per_second = attempts / elapsed_time
+        
         if attempts % 1000000 == 0:
             print(f"Attempts so far: {attempts}")
             print(f"Current guess:", "".join(str(x) for x in attack_pin))
+            print("Attempts per second:", f"{attempts_per_second:.1f}")
+            print()
+        
             
         if list(attack_pin) == generated_pin:
-            
-            elapsed_time = time.time() - start_time
-            attempts_per_second = attempts / elapsed_time
             
             print("Attack successfully executed.")
             print("> The pin is:", "".join(str(x) for x in attack_pin))
             print("> Attempts taken:", attempts)
             print("> Attempts per second:", f"{attempts_per_second:.2f}")
-            print("> Time taken:", f"{elapsed_time:.2f}")
+            print("> Time taken:", f"{elapsed_time:.1f}")
             print("===Made By Ibad===")
             print()
 
